@@ -1,3 +1,5 @@
-# Build .NET SDK for RISC-V
+# .NET SDK for RISC-V
 
-Made with help of https://github.com/ppc64le/build-scripts/blob/master/d/dotnet7/dotnet-build-ppc64le
+This repo intends to build dotnet artifacts for usage with GitHub action runners on RISC-V.
+
+This repo is based on https://github.com/dkurt/dotnet_riscv
