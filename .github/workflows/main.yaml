@@ -1,4 +1,4 @@
-name: Build .NET SDK
+name: Build .NET 8
 
 on: [workflow_dispatch]
 
@@ -66,10 +66,6 @@ jobs:
       image: mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-22.04-cross-riscv64
       env:
         ROOTFS_DIR: /crossrootfs/riscv64
-      volumes:
-        - ${{ github.workspace }}/output:/output
-        - ${{ github.workspace }}/packages:/packages
-        - ${{ github.workspace }}/downloads:/downloads
     steps:
     - name: Init
       run: |
@@ -105,10 +101,6 @@ jobs:
       image: mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-22.04-cross-riscv64
       env:
         ROOTFS_DIR: /crossrootfs/riscv64
-      volumes:
-        - ${{ github.workspace }}/output:/output
-        - ${{ github.workspace }}/packages:/packages
-        - ${{ github.workspace }}/downloads:/downloads
     steps:
     - name: Init
       run: |
@@ -162,10 +154,6 @@ jobs:
       image: mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-22.04-cross-riscv64
       env:
         ROOTFS_DIR: /crossrootfs/riscv64
-      volumes:
-        - ${{ github.workspace }}/output:/output
-        - ${{ github.workspace }}/packages:/packages
-        - ${{ github.workspace }}/downloads:/downloads
     steps:
     - name: Init
       run: |
