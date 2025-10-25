@@ -7,7 +7,9 @@ env:
   SDK_VERSION: '8.0.415'
   ASPNETCORE_VERSION: '8.0.21'
   # check eng/Versions.props in installer repo
+  # MicrosoftNETCorePlatformsPackageVersion
   RUNTIME_VERSION_FULL: '8.0.21-servicing.25475.13'
+  # MicrosoftAspNetCoreAppRefInternalPackageVersion
   ASPNETCORE_VERSION_FULL: '8.0.21-servicing.25475.15'
 
 jobs:
