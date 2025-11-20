@@ -105,6 +105,12 @@ jobs:
     - name: Init
       run: |
         mkdir -p /output /packages /downloads
+    - name: Get more space
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /opt/ghc
+        sudo rm -rf "/usr/local/share/boost"
+        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
     - name: Update Node.js
       run: |
         # Not sure why kitware's key is missing
