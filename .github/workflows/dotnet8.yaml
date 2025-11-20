@@ -11,6 +11,8 @@ env:
   RUNTIME_VERSION_FULL: '8.0.22-servicing.25527.7'
   # MicrosoftAspNetCoreAppRefInternalPackageVersion
   ASPNETCORE_VERSION_FULL: '8.0.22-servicing.25528.8'
+  # MicrosoftNETSdkPackageVersion
+  SDK_VERSION_FULL: '8.0.416-servicing.25528.7'
 
 jobs:
   build-runtime:
@@ -77,8 +79,8 @@ jobs:
       run: |
         cd sdk
         ./build.sh --pack --ci -c Release /p:Architecture=riscv64
-        mkdir -p /downloads/Sdk/${SDK_VERSION}
-        cp artifacts/packages/Release/NonShipping/dotnet-toolset-internal-*.zip /downloads/Sdk/${SDK_VERSION}/dotnet-toolset-internal-${SDK_VERSION}.zip
+        mkdir -p /downloads/Sdk/${SDK_VERSION_FULL}
+        cp artifacts/packages/Release/NonShipping/dotnet-toolset-internal-*.zip /downloads/Sdk/${SDK_VERSION_FULL}/dotnet-toolset-internal-${SDK_VERSION_FULL}.zip
         cp artifacts/packages/Release/Shipping/Microsoft.DotNet.Common.*.nupkg /packages
         cd .. && rm -r sdk
     - uses: actions/upload-artifact@v4
