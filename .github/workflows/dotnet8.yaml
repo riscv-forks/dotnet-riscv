@@ -101,16 +101,18 @@ jobs:
       image: mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-22.04-cross-riscv64
       env:
         ROOTFS_DIR: /crossrootfs/riscv64
+      volumes:
+        - /:/run/host
     steps:
     - name: Init
       run: |
         mkdir -p /output /packages /downloads
     - name: Get more space
       run: |
-        sudo rm -rf /usr/share/dotnet
-        sudo rm -rf /opt/ghc
-        sudo rm -rf "/usr/local/share/boost"
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+        df -h
+        rm -rf /run/host/usr/share/dotnet
+        rm -rf /run/host/opt/ghc
+        rm -rf /run/host/usr/local/share/boost
     - name: Update Node.js
       run: |
         # Not sure why kitware's key is missing
